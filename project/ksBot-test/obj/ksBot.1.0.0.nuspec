@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ksBot</id>
+    <version>1.0.0</version>
+    <authors>ksBot</authors>
+    <owners>ksBot</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp1.1">
+        <dependency id="Discore" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Tools" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.App" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer.Design" version="1.1.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.json" target="lib\netcoreapp1.1\ksBot.runtimeconfig.json" />
+    <file src="C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.dll" target="lib\netcoreapp1.1\ksBot.dll" />
+  </files>
+</package>

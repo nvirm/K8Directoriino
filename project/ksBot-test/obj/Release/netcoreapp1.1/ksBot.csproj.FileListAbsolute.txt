@@ -1,0 +1,27 @@
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.deps.json
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.AssemblyInfo.cs
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.json
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.dev.json
+C:\Users\Niki\Documents\Visual Studio 2017\Projects\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.csprojResolveAssemblyReference.cache
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.deps.json
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.json
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.dev.json
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\bin\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.csprojResolveAssemblyReference.cache
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.AssemblyInfo.cs
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Desktop\ksBot-test\ksBot-test\obj\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.deps.json
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.json
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.runtimeconfig.dev.json
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\bin\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\obj\Release\netcoreapp1.1\ksBot.AssemblyInfo.cs
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\obj\Release\netcoreapp1.1\ksBot.dll
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\obj\Release\netcoreapp1.1\ksBot.pdb
+C:\Users\Niki\Desktop\ksBot-test-13\ksBot-test\obj\Release\netcoreapp1.1\ksBot.csprojResolveAssemblyReference.cache

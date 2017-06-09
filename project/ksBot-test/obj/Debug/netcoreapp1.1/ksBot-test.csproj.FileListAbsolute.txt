@@ -1,0 +1,9 @@
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\bin\Debug\netcoreapp1.1\ksBot-test.deps.json
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\bin\Debug\netcoreapp1.1\ksBot-test.runtimeconfig.json
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\bin\Debug\netcoreapp1.1\ksBot-test.runtimeconfig.dev.json
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\bin\Debug\netcoreapp1.1\ksBot-test.dll
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\obj\Debug\netcoreapp1.1\ksBot-test.csprojResolveAssemblyReference.cache
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\obj\Debug\netcoreapp1.1\ksBot-test.AssemblyInfo.cs
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\bin\Debug\netcoreapp1.1\ksBot-test.pdb
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\obj\Debug\netcoreapp1.1\ksBot-test.dll
+c:\users\niki\documents\visual studio 2017\Projects\ksBot-test\ksBot-test\obj\Debug\netcoreapp1.1\ksBot-test.pdb
