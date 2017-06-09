@@ -18,5 +18,5 @@ Includes: Regular season point system, Team management, Map draft link generatin
 
 Bot is running on Discore 2.3.0 (https://github.com/BundledSticksInkorperated/Discore)
 
-Project is running on .NET Standard 1.6
+Project is running on .NET Core 1.1 / .NET Standard 1.6
 
