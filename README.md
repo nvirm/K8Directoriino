@@ -1,7 +1,7 @@
 # K8Directoriino
 ![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino1.PNG)
 
-!! Please note: Currently in development, some functions may not work!!
+# !! Please note: Currently in development, some functions may not work!!
 
 An Overwatch custom tournament/league bot for Discord
 Includes: Regular season point system, Team management, Map draft link generating, Player Competitive stats fetching and storing
