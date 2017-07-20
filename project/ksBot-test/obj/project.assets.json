@@ -15,7 +15,7 @@
           "lib/netstandard1.3/ConsoleTables.dll": {}
         }
       },
-      "Discore/2.3.0": {
+      "Discore/2.4.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -3170,12 +3170,12 @@
         "lib/netstandard1.3/ConsoleTables.dll"
       ]
     },
-    "Discore/2.3.0": {
-      "sha512": "umHBySgt6o3/WNBcFoGSi9YVXWFN1dLkWRKwsp5Wvh2LYJbT0Mco7X2DDujdqiPld+19YBSsJV82cEi8u5Qxgw==",
+    "Discore/2.4.0": {
+      "sha512": "zJA6/l2R/5CEAwuzKlGZYX9LZMH3m86hp8ahSfc+yo1eWXmAA4PVHAUNYdTKPrtBmt73FHqEvu5S7AsUAOL8EQ==",
       "type": "package",
-      "path": "discore/2.3.0",
+      "path": "discore/2.4.0",
       "files": [
-        "discore.2.3.0.nupkg.sha512",
+        "discore.2.4.0.nupkg.sha512",
         "discore.nuspec",
         "lib/netstandard1.6/.xml",
         "lib/netstandard1.6/Discore.dll"
@@ -8923,7 +8923,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
       "ConsoleTables >= 2.1.0",
-      "Discore >= 2.3.0",
+      "Discore >= 2.4.0",
       "HtmlAgilityPack.NetCore >= 1.5.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.1.2",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.2",
@@ -8939,10 +8939,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\K8Director\\ksBot-test\\K8Director.csproj",
+      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\K8Director.csproj",
       "projectName": "K8Director",
-      "projectPath": "C:\\Users\\Niki\\Desktop\\K8Director\\ksBot-test\\K8Director.csproj",
-      "outputPath": "C:\\Users\\Niki\\Desktop\\K8Director\\ksBot-test\\obj\\",
+      "projectPath": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\K8Director.csproj",
+      "outputPath": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -8966,7 +8966,7 @@
           },
           "Discore": {
             "target": "Package",
-            "version": "2.3.0"
+            "version": "[2.4.0, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",

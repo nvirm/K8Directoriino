@@ -24,10 +24,10 @@ namespace K8Director
             public static string adminchannel = ""; //admin commands channel
             public static string connstring = ""; //Connection string
             public static string owapiulr = ""; //OWAPI provider url
-            public static int winpoints = 3;
-            public static int losepoints = 0;
-            public static int drawpoints = 1;
-            public static int postponelimithours = 12;
+            public static int winpoints = 3; //How many points does a winner take (overridden from settings)
+            public static int losepoints = 0; //How many points does a loser take (overridden from settings)
+            public static int drawpoints = 1;//How many points does a draw give (overridden from settings)
+            public static int postponelimithours = 12; //How many hours until a match cannot be cancelled any more (overridden from settings)
 
             //Texts (FI)
             public static string txt1 = "Käsittelyssä tapahtui virhe.";
@@ -68,6 +68,8 @@ namespace K8Director
             public static string txt36 = "Tulostaa nykyisen pistetilaston.";
             public static string txt37 = "Sinun tämänhetkiset tiedot tietokannassa.";
 
+            public static string txt132 = "(!attend KAUPUNKI) Merkitsee sinut ilmoittautuneeksi turnaukseen.";
+            public static string txt133 = "(!removeattend) Poistaa turnaukseen ilmoittautumisen.";
             public static string txt38 = "(!btag NIMI#1234) Lisää battletagisi botin tietoisuuteen, päivittää myös tiedot OWAPI.net rajapinnasta Tirehtöörin tietokantaan. Huomaa että Battletagin kirjainkoolla on väliä.";
             public static string txt39 = "(!rating 1234) Päivittää omavalitsemasi ratingin. Suositellaan annettavaksi todellisuutta vastaava.";
             public static string txt40 = "(!roster KAUPUNKI) Tulostaa joukkueen jäsenlistan. Huomaa että joukkueen nimi tulee kirjoittaa samassa muodossa kuin Scoreboardissa.";
@@ -149,6 +151,7 @@ namespace K8Director
             public static string txt121 = "Järjestelmässä ei vielä joukkueita!";
             public static string txt122 = "Tulostaa kaikki järjestelmässä olevat joukkueet.";
 
+
             public static string txt123 = "Päiväys väärässä muodossa, muoto on PP.KK.VVVV HH:MM";
             public static string txt124 = "(!showtime MATCHID PP.KK.VVVV HH:MM) Kotijoukkueen kapteenin komento. Määrittää ottelulle alkamisajan.";
             public static string txt125 = "Ottelun aloitusaika syötetty onnistuneesti!";
@@ -156,8 +159,12 @@ namespace K8Director
             public static string txt127 = "Ottelua ei voi siirtää ollessa liian lähellä aiemmin annettua ajankohtaa!";
             public static string txt128 = "Et ole kotijoukkueen kapteeni!";
             public static string txt129 = "Ottelu on joko meneillään tai jo päättynyt!";
+            public static string txt131 = "Kaikkia tarvittavia tietoja ei syötetty.";
 
             public static string txt130 = "Joukkueella on avoinna oleva peli, sulje avoin peli ensin käyttämällä !score KOTI VIERAS";
+
+            public static string txt134 = "(+forcecaptain @NIMI#1234 KAUPUNKI), vaihtaa kaupungin kapteenin väkisin.";
+            public static string txt135 = "(+addmatch KOODI KOTIKAUPUNKI VIERASKAUPUNKI), luo tietokantaan uuden ottelun koodilla.";
 
 
             //Scoreboard
@@ -340,6 +347,13 @@ namespace K8Director
                 ProgHelpers.txt127 = "Can not postpone match when too close to given starting time!";
                 ProgHelpers.txt128 = "You are not the Home team captain.";
                 ProgHelpers.txt129 = "Match is already underway or has already been settled!";
+                ProgHelpers.txt131 = "Not all required information was given.";
+
+                ProgHelpers.txt132 = "(!attend CITY/TEAM) Marks you as attending to the tournament.";
+                ProgHelpers.txt133 = "(!removeattend) Removes your attending status from the tournament.";
+
+                ProgHelpers.txt134 = "(+forcecaptain @NAME#1234 TEAM), forcefully changes the captain of the team.";
+                ProgHelpers.txt135 = "(+addmatch CODE HOMETEAM VISITORTEAM), creates a new match to database.";
 
                 ProgHelpers.txt130 = "Home team has an unresolved game pending. Use !score HOME VISITOR to give score for the pending game.";
             }
@@ -382,45 +396,45 @@ namespace K8Director
                 // Ignore messages created by our bot.
                 return;
 
-            //-----------------------------------------------------------------------------------------TODO: Attend
-            if (message.Content == "!attend")
-            {
-                // Grab the DM or guild text channel this message was posted in from cache.
-                ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
+            //-----------------------------------------------------------------------------------------TODO: Attend (Require city as info)
+            //if (message.Content == "!attend")
+            //{
+            //    // Grab the DM or guild text channel this message was posted in from cache.
+            //    ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
 
-                try
-                {
-                    var x = message.Author.Id.Id;
-                    var y = message.Author.Username;
-                    //var returnTask = await ksh.Me(x, y);
+            //    try
+            //    {
+            //        var x = message.Author.Id.Id;
+            //        var y = message.Author.Username;
+            //        //var returnTask = await ksh.Me(x, y);
 
-                    //if (returnTask.Count < 1)
-                    //{
-                    //    await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt1 + "```");
-                    //}
-                    //else
-                    //{
-                    //    await textChannel.CreateMessage(new DiscordMessageDetails()
-                    //        .SetEmbed(new DiscordEmbedBuilder()
-                    //            .SetTitle($"{message.Author.Username} " + ProgHelpers.txt2)
-                    //            .SetColor(DiscordColor.FromHexadecimal(0xff9933))
-                    //            .AddField(ProgHelpers.txt3 + " ", returnTask[0], true)
-                    //            .AddField(ProgHelpers.txt4 + " ", returnTask[1] + "(API: " + returnTask[2] + ")", true)
-                    //            .AddField(ProgHelpers.txt5 + " ", returnTask[4] + "(" + ProgHelpers.txt7 + " " + returnTask[3] + ")", true)
-                    //            .AddField(ProgHelpers.txt6 + " ", returnTask[5] + "/" + returnTask[6] + "/" + returnTask[7], true)
-                    //            .AddField(ProgHelpers.txt116 + " ", returnTask[8] + "%", true)
-                    //            .AddField(ProgHelpers.txt117 + " ", returnTask[9] + "H", true)
-                    //            .SetThumbnail(returnTask[10])
-                    //            ));
-                    //}
-                    Console.WriteLine($"!attend - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                    Console.WriteLine($"!attend - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
-                }
-            }
+            //        //if (returnTask.Count < 1)
+            //        //{
+            //        //    await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt1 + "```");
+            //        //}
+            //        //else
+            //        //{
+            //        //    await textChannel.CreateMessage(new DiscordMessageDetails()
+            //        //        .SetEmbed(new DiscordEmbedBuilder()
+            //        //            .SetTitle($"{message.Author.Username} " + ProgHelpers.txt2)
+            //        //            .SetColor(DiscordColor.FromHexadecimal(0xff9933))
+            //        //            .AddField(ProgHelpers.txt3 + " ", returnTask[0], true)
+            //        //            .AddField(ProgHelpers.txt4 + " ", returnTask[1] + "(API: " + returnTask[2] + ")", true)
+            //        //            .AddField(ProgHelpers.txt5 + " ", returnTask[4] + "(" + ProgHelpers.txt7 + " " + returnTask[3] + ")", true)
+            //        //            .AddField(ProgHelpers.txt6 + " ", returnTask[5] + "/" + returnTask[6] + "/" + returnTask[7], true)
+            //        //            .AddField(ProgHelpers.txt116 + " ", returnTask[8] + "%", true)
+            //        //            .AddField(ProgHelpers.txt117 + " ", returnTask[9] + "H", true)
+            //        //            .SetThumbnail(returnTask[10])
+            //        //            ));
+            //        //}
+            //        Console.WriteLine($"!attend - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex);
+            //        Console.WriteLine($"!attend - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
+            //    }
+            //}
 
             //-----------------------------------------------------------------------------------------ME - VALMIS V1
             if (message.Content == "!me")
@@ -460,7 +474,6 @@ namespace K8Director
                     Console.WriteLine($"!me - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
                 }
             }
-
             //-----------------------------------------------------------------------------------------TEAMS - VALMIS V1
             if (message.Content == "!teams")
             {
@@ -487,7 +500,6 @@ namespace K8Director
                     Console.WriteLine($"!teams - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
                 }
             }
-
             //-----------------------------------------------------------------------------------------RATING - VALMIS V1
             if (message.Content.StartsWith("!rating"))
             {
@@ -638,7 +650,7 @@ namespace K8Director
                     Console.WriteLine($"!roster - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
                 }
             }
-            //-----------------------------------------------------------------------------------------STANDINGS - VALMIS V1 (Kantacheck poistettu toistaiseksi)
+            //-----------------------------------------------------------------------------------------STANDINGS - VALMIS V1
             if (message.Content == "!standings" || message.Content == "!scoreboard")
             {
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
@@ -649,19 +661,6 @@ namespace K8Director
                     // Reply to the user who posted "!standings".
                     if (returnlist != null)
                     {
-                        //var standingslist = "";
-                        //for (var iz = 0; iz < returnlist.Count; iz++) { standingslist = standingslist + (returnlist[iz]) + "\n"; };
-
-                        //var standingsstring = "";
-
-                        //    await textChannel.CreateMessage(new DiscordMessageDetails()
-                        //.SetEmbed(new DiscordEmbedBuilder()
-                        //.SetTitle(ProgHelpers.txt108)
-                        //.SetFooter(DateTime.Now.ToString())
-                        //.SetColor(DiscordColor.FromHexadecimal(268))
-                        //.AddField("Standings", "```" + returnlist + "```", false)
-                        ////.AddField("KAUPUNKI-------LOHKO-------PISTEET----PELIT----RWON----RLOSE------(+-) ", standingslist, false)
-                        //));
                         await textChannel.CreateMessage($"```"+returnlist+"\n"+ProgHelpers.txt108+"```");
                     }
                     else
@@ -673,24 +672,6 @@ namespace K8Director
                 }
                 catch (Exception) { Console.WriteLine("!scoreboard - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
             }
-
-            //Placeholder standings, only says the website location while division fix is being made
-
-            //if (message.Content == "!standings")
-            //{
-            //    ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
-            //    try
-            //    {
-            //        await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt25);
-            //        Console.WriteLine($"!standings -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
-            //    }
-            //    catch (Exception)
-            //    {
-            //        Console.WriteLine($"!standings - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
-            //    }
-                
-            //}
-
             //-----------------------------------------------------------------------------------------INFO - VALMIS V1
             if (message.Content == "!info")
             {
@@ -736,6 +717,8 @@ namespace K8Director
                     .AddField("!me", ProgHelpers.txt37, false)
                     .AddField("!btag", ProgHelpers.txt38, false)
                     .AddField("!rating", ProgHelpers.txt39, false)
+                    //.AddField("!attend", ProgHelpers.txt132, false) //Marks person as attending
+                    //.AddField("!removeattend", ProgHelpers.txt133, false) //Marks person as not attending
                     .AddField("!teams", ProgHelpers.txt122, false) //Lists all teams in database
                     .AddField("!roster", ProgHelpers.txt40, false)
                     .AddField("!teamname", ProgHelpers.txt41, false)
@@ -746,10 +729,10 @@ namespace K8Director
                     .AddField("!remove", ProgHelpers.txt45, false)
                     .AddField("!captain", ProgHelpers.txt46, false)
                     .AddField("!resign", ProgHelpers.txt47, false)
-                    //.AddField("+forcecaptain",ProgHelpers.txtxxx,false)
-                    //.AddField("+addmatch",ProgHelpers.txtxxx,false)
-                    //.AddField("+addteam",ProgHelpers.txtxxx,false)
-                    //.AddField("+removeteam",ProgHelpers.txtxxx,false)
+                    .AddField("+forcecaptain",ProgHelpers.txt134,false)
+                    .AddField("+addmatch",ProgHelpers.txt135,false)
+                    //.AddField("+addteam",ProgHelpers.txtxxx,false) //adds team to database
+                    //.AddField("+removeteam",ProgHelpers.txtxxx,false) //removes team from database
                     //.AddField("+renameteam",ProgHelpers.txtxxx,false) //Rename the base of name (TEAM), not nickname.
                     //.AddField("+eliminateteam",ProgHelpers.txtxxx,false) //Mark team to be played out (not enough points for playoffs, or dropped off from playoffs)
                     //.AddField("+attending",ProgHelpers.txtxxx,false) //open/close attending
@@ -762,10 +745,10 @@ namespace K8Director
                 catch (Exception) { Console.WriteLine($"!help - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
             }
 
-            //-----------------------------------------------------------------------------------------#KAPTEENIT KANAVA
+            //-----------------------------------------------------------------------------------------#KAPTEENIT CHANNEL
             if (message.ChannelId.Id.ToString() == ProgHelpers.captainchannel)//
             {
-                //-----------------------------------------------------------------------------------------SHOWTIME
+                //-----------------------------------------------------------------------------------------SHOWTIME - CHECK IF READY V1
                 if (message.Content.StartsWith("!showtime"))
                 {
                     var msg = message.Content;
@@ -825,48 +808,47 @@ namespace K8Director
                     }
                     else
                     {
-                        //puuttuu asioita
+                        await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt131);
                     }
                 }
-
-                    //-----------------------------------------------------------------------------------------TEAMNAME - VALMIS V1
-                    if (message.Content.StartsWith("!teamname"))
+                //-----------------------------------------------------------------------------------------TEAMNAME - VALMIS V1
+                if (message.Content.StartsWith("!teamname"))
+            {
+                var msg = message.Content;
+                string[] msgsp = msg.Split(null);
+                ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
+                int index = 1;
+                if (index < msgsp.Length)
                 {
-                    var msg = message.Content;
-                    string[] msgsp = msg.Split(null);
-                    ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
-                    int index = 1;
-                    if (index < msgsp.Length)
+                    try
                     {
-                        try
+                        var x = message.Author.Id.Id;
+                        string y = "";
+                        y = msgsp[1];
+                        var teamnamewithspaces = msg.Remove(0, msg.IndexOf(' ') + 1);
+                        var result = await ksh.Teamname(x, teamnamewithspaces);
+                        if (result == true)
                         {
-                            var x = message.Author.Id.Id;
-                            string y = "";
-                            y = msgsp[1];
-                            var teamnamewithspaces = msg.Remove(0, msg.IndexOf(' ') + 1);
-                            var result = await ksh.Teamname(x, teamnamewithspaces);
-                            if (result == true)
-                            {
-                                // Reply to the user who posted "!teamname".
-                                await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt48);
-                            }
-                            else
-                            {
-                                // Reply to the user who posted "!teamname".
-                                await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt49);
-                            }
-
-                            Console.WriteLine($"!teamname - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
+                            // Reply to the user who posted "!teamname".
+                            await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt48);
                         }
-                        catch (Exception) { Console.WriteLine($"!teamname - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
-                    }
-                    else
-                    {
-                        await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt50);
+                        else
+                        {
+                            // Reply to the user who posted "!teamname".
+                            await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt49);
+                        }
+
                         Console.WriteLine($"!teamname - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
                     }
-
+                    catch (Exception) { Console.WriteLine($"!teamname - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
                 }
+                else
+                {
+                    await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt50);
+                    Console.WriteLine($"!teamname - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
+                }
+
+            }
                 //-----------------------------------------------------------------------------------------BECOMECAPTAIN - VALMIS V1
                 if (message.Content.StartsWith("!captain"))
                 {
@@ -1255,7 +1237,7 @@ namespace K8Director
                 }
             }
 
-            //-----------------------------------------------------------------------------------------#ADMINS KANAVA
+            //-----------------------------------------------------------------------------------------#ADMINS CHANNEL
             if (message.ChannelId.Id.ToString() == ProgHelpers.adminchannel)
             {
                 //-----------------------------------------------------------------------------------------+ADDMATCH - VALMIS V1
