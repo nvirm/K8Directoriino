@@ -27,6 +27,8 @@ Includes: Regular season point system, Team management, Map draft link generatin
 
 Bot is running on Discore 2.3.0 (https://github.com/BundledSticksInkorperated/Discore)
 
+Bot utilizes OW API (https://github.com/SunDwarf/OWAPI) instance that you can either host yourself or use the API the developer provides.
+
 Project is running on .NET Core 1.1 / .NET Standard 1.6
 
 Language support added for english, default/original language was finnish. Can be changed from appsettings.json
