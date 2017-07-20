@@ -25,7 +25,7 @@ Includes: Regular season point system, Team management, Map draft link generatin
 
 # Details
 
-Bot is running on Discore 2.3.0 (https://github.com/BundledSticksInkorperated/Discore)
+Bot is running on Discore 2.4.0 (https://github.com/BundledSticksInkorperated/Discore)
 
 Bot utilizes OW API (https://github.com/SunDwarf/OWAPI) instance that you can either host yourself or use the API the developer provides.
 
