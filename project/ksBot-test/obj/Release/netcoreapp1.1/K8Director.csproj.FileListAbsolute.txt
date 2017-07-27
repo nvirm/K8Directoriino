@@ -6,3 +6,12 @@ C:\Users\Niki\Desktop\AVALON\V2Tests\K8Director\ksBot-test\bin\Release\netcoreap
 C:\Users\Niki\Desktop\AVALON\V2Tests\K8Director\ksBot-test\obj\Release\netcoreapp1.1\K8Director.AssemblyInfo.cs
 C:\Users\Niki\Desktop\AVALON\V2Tests\K8Director\ksBot-test\obj\Release\netcoreapp1.1\K8Director.dll
 C:\Users\Niki\Desktop\AVALON\V2Tests\K8Director\ksBot-test\obj\Release\netcoreapp1.1\K8Director.pdb
+C:\Users\Niki\Desktop\project\ksBot-test\bin\Release\netcoreapp1.1\K8Director.deps.json
+C:\Users\Niki\Desktop\project\ksBot-test\bin\Release\netcoreapp1.1\K8Director.runtimeconfig.json
+C:\Users\Niki\Desktop\project\ksBot-test\bin\Release\netcoreapp1.1\K8Director.runtimeconfig.dev.json
+C:\Users\Niki\Desktop\project\ksBot-test\bin\Release\netcoreapp1.1\K8Director.dll
+C:\Users\Niki\Desktop\project\ksBot-test\bin\Release\netcoreapp1.1\K8Director.pdb
+C:\Users\Niki\Desktop\project\ksBot-test\obj\Release\netcoreapp1.1\K8Director.csprojResolveAssemblyReference.cache
+C:\Users\Niki\Desktop\project\ksBot-test\obj\Release\netcoreapp1.1\K8Director.AssemblyInfo.cs
+C:\Users\Niki\Desktop\project\ksBot-test\obj\Release\netcoreapp1.1\K8Director.dll
+C:\Users\Niki\Desktop\project\ksBot-test\obj\Release\netcoreapp1.1\K8Director.pdb

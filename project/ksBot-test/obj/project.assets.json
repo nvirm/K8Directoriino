@@ -15,15 +15,15 @@
           "lib/netstandard1.3/ConsoleTables.dll": {}
         }
       },
-      "Discore/2.4.0": {
+      "Discore/2.4.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "Nito.AsyncEx.Coordination": "1.0.2",
           "System.Collections.NonGeneric": "4.3.0",
           "System.Net.NameResolution": "4.3.0",
-          "System.Net.WebSockets.Client": "4.3.0"
+          "System.Net.WebSockets.Client": "4.3.1"
         },
         "compile": {
           "lib/netstandard1.6/Discore.dll": {}
@@ -819,34 +819,14 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -2157,7 +2137,7 @@
           "lib/netstandard1.3/System.Net.WebSockets.dll": {}
         }
       },
-      "System.Net.WebSockets.Client/4.3.0": {
+      "System.Net.WebSockets.Client/4.3.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -3170,12 +3150,12 @@
         "lib/netstandard1.3/ConsoleTables.dll"
       ]
     },
-    "Discore/2.4.0": {
-      "sha512": "zJA6/l2R/5CEAwuzKlGZYX9LZMH3m86hp8ahSfc+yo1eWXmAA4PVHAUNYdTKPrtBmt73FHqEvu5S7AsUAOL8EQ==",
+    "Discore/2.4.1": {
+      "sha512": "RXw/n9seuaaj/2HeohARDjQ1AR0iaq4QqGUGf7YJfkA9/D8s3Eoq6FbGbjab+5ZRJFfprLs3ZmJxyjSKbxqniQ==",
       "type": "package",
-      "path": "discore/2.4.0",
+      "path": "discore/2.4.1",
       "files": [
-        "discore.2.4.0.nupkg.sha512",
+        "discore.2.4.1.nupkg.sha512",
         "discore.nuspec",
         "lib/netstandard1.6/.xml",
         "lib/netstandard1.6/Discore.dll"
@@ -3909,11 +3889,12 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/10.0.1": {
-      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
       "type": "package",
-      "path": "newtonsoft.json/10.0.1",
+      "path": "newtonsoft.json/10.0.3",
       "files": [
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -3926,9 +3907,11 @@
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
-        "newtonsoft.json.10.0.1.nupkg.sha512",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
@@ -6532,10 +6515,10 @@
         "system.net.websockets.nuspec"
       ]
     },
-    "System.Net.WebSockets.Client/4.3.0": {
-      "sha512": "QjcP33TONz6wS5+3B4JKHXxQp9b5sexHH/eGTBwG2ZhlaThGvZGm3mMEHyJB6rrLsSah3h1Gc/OkJ162iavkjA==",
+    "System.Net.WebSockets.Client/4.3.1": {
+      "sha512": "uQ2JCw7PuWx/TsGc5uyMibp2X1Rui3iUpS3AHnWT7k/8A7ORTNIRktxgmrCDrgBFm771+JS+FGQPANRuWOBMTQ==",
       "type": "package",
-      "path": "system.net.websockets.client/4.3.0",
+      "path": "system.net.websockets.client/4.3.1",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -6568,7 +6551,7 @@
         "runtimes/win/lib/net46/System.Net.WebSockets.Client.dll",
         "runtimes/win/lib/netcore50/System.Net.WebSockets.Client.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.WebSockets.Client.dll",
-        "system.net.websockets.client.4.3.0.nupkg.sha512",
+        "system.net.websockets.client.4.3.1.nupkg.sha512",
         "system.net.websockets.client.nuspec"
       ]
     },
@@ -8923,7 +8906,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
       "ConsoleTables >= 2.1.0",
-      "Discore >= 2.4.0",
+      "Discore >= 2.4.1",
       "HtmlAgilityPack.NetCore >= 1.5.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.1.2",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.2",
@@ -8939,10 +8922,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\K8Director.csproj",
+      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\K8Director.csproj",
       "projectName": "K8Director",
-      "projectPath": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\K8Director.csproj",
-      "outputPath": "C:\\Users\\Niki\\Desktop\\AVALON\\V2Tests\\K8Director\\ksBot-test\\obj\\",
+      "projectPath": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\K8Director.csproj",
+      "outputPath": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -8966,7 +8949,7 @@
           },
           "Discore": {
             "target": "Package",
-            "version": "[2.4.0, )"
+            "version": "[2.4.1, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
