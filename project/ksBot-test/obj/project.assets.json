@@ -8922,10 +8922,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\K8Director.csproj",
+      "projectUniqueName": "C:\\Users\\Niki\\Desktop\\K8Director\\project\\ksBot-test\\K8Director.csproj",
       "projectName": "K8Director",
-      "projectPath": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\K8Director.csproj",
-      "outputPath": "C:\\Users\\Niki\\Desktop\\project\\ksBot-test\\obj\\",
+      "projectPath": "C:\\Users\\Niki\\Desktop\\K8Director\\project\\ksBot-test\\K8Director.csproj",
+      "outputPath": "C:\\Users\\Niki\\Desktop\\K8Director\\project\\ksBot-test\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -8949,7 +8949,7 @@
           },
           "Discore": {
             "target": "Package",
-            "version": "[2.4.1, )"
+            "version": "2.4.1"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",

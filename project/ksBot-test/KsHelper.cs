@@ -1501,24 +1501,54 @@ namespace K8Director
                     double winrate = 0;
                     double timeplayed = 0;
                     string avatarurl = "";
+                    
+                    //06.08.2017 OWAPI Workaround, Blizzard removed average kills deaths and healing, but totals are visible, so...
+                    double gamesPlayed = 0;
+                    double placehKills = 0;
+                    double placehDeaths = 0;
+                    double placehHeal = 0;
+
 
                     int sr = 0;
+                    //06.08.2017 OWAPI Workaround
+                    if (o.SelectToken("eu.stats.competitive.game_stats.games_played") != null)
+                    {
+                        gamesPlayed = (double)o.SelectToken("eu.stats.competitive.game_stats.games_played");
+
+                        if (o.SelectToken("eu.stats.competitive.game_stats.eliminations") != null)
+                        {
+                                placehKills = (double)o.SelectToken("eu.stats.competitive.game_stats.eliminations");
+                                killavg = Math.Round(placehKills / gamesPlayed, 1);
+                        }
+                        if (o.SelectToken("eu.stats.competitive.game_stats.deaths") != null)
+                        {
+                                placehDeaths = (double)o.SelectToken("eu.stats.competitive.game_stats.deaths");
+                                deathavg = Math.Round(placehDeaths / gamesPlayed, 1);
+                        }
+                        if (o.SelectToken("eu.stats.competitive.game_stats.healing_done") != null)
+                        {
+                                placehHeal = (double)o.SelectToken("eu.stats.competitive.game_stats.healing_done");
+                                healavg = Math.Round(placehHeal / gamesPlayed, 1);
+                        }
+                    }
+
+
+                        //if (o.SelectToken("eu.stats.competitive.average_stats.eliminations_avg") != null)
+                        //{
+                        //    killavg = (double)o.SelectToken("eu.stats.competitive.average_stats.eliminations_avg");
+                        //}
+                        //if (o.SelectToken("eu.stats.competitive.average_stats.healing_done_avg") != null)
+                        //{
+                        //    healavg = (double)o.SelectToken("eu.stats.competitive.average_stats.healing_done_avg");
+                        //}
+                        //if (o.SelectToken("eu.stats.competitive.average_stats.deaths_avg") != null)
+                        //{
+                        //    deathavg = (double)o.SelectToken("eu.stats.competitive.average_stats.deaths_avg");
+                        //}
 
                     if (o.SelectToken("eu.stats.competitive.overall_stats.comprank") != null)
                     {
                         sr = (int)o.SelectToken("eu.stats.competitive.overall_stats.comprank");
-                    }
-                    if (o.SelectToken("eu.stats.competitive.average_stats.eliminations_avg") != null)
-                    {
-                        killavg = (double)o.SelectToken("eu.stats.competitive.average_stats.eliminations_avg");
-                    }
-                    if (o.SelectToken("eu.stats.competitive.average_stats.healing_done_avg") != null)
-                    {
-                        healavg = (double)o.SelectToken("eu.stats.competitive.average_stats.healing_done_avg");
-                    }
-                    if (o.SelectToken("eu.stats.competitive.average_stats.deaths_avg") != null)
-                    {
-                        deathavg = (double)o.SelectToken("eu.stats.competitive.average_stats.deaths_avg");
                     }
                     if (o.SelectToken("eu.stats.competitive.overall_stats.win_rate") != null)
                     {
