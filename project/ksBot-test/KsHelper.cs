@@ -234,7 +234,7 @@ namespace K8Director
             }
         }
         //---------------------------------------------------------------------------------------!btag <BATTLETAG#1234>                         VALMIS V1
-        public async Task<bool> Btag(ulong i, string st, string name)
+        public async Task<int> Btag(ulong i, string st, string name)
         {
             using (var db = new ksBotSQLContext())
             {
@@ -246,11 +246,32 @@ namespace K8Director
                 var result = db.User.SingleOrDefault(b => b.DiscordId == discordId);
                 if (result != null)
                 {
-                    result.BtagId = battleTag;
-                    result.Username = namehold;
-                    await db.SaveChangesAsync();
-                    await OWstats(discordId,battleTag);
-                    return true;
+                   
+                    var goAPI = await OWstats(discordId,battleTag);
+                    if (goAPI == 1)
+                    {
+                        //update db because the status is ok
+                        result.BtagId = battleTag;
+                        result.Username = namehold;
+                        await db.SaveChangesAsync();
+
+                        return 1;
+                    }
+                    if (goAPI == 0)
+                    {
+                        //update db because the status is "unsure"
+                        result.BtagId = battleTag;
+                        result.Username = namehold;
+                        await db.SaveChangesAsync();
+
+                        return 0;
+                    }
+                    if (goAPI == 3)
+                    {
+                        //return without updating
+                        return 3;
+                    }
+                    return 1;  
                 }
                 else
                 {
@@ -261,19 +282,40 @@ namespace K8Director
                         var result2 = db.User.SingleOrDefault(b => b.DiscordId == discordId);
                         if (result2 != null)
                         {
-                            result2.BtagId = battleTag;
-                            result2.Username = namehold;
-                            await db.SaveChangesAsync();
-                            await OWstats(discordId, battleTag);
-                            return true;
+                            
+                            var goAPI = await OWstats(discordId, battleTag);
+                            if (goAPI == 1)
+                            {
+                                //update db because the status is ok
+                                result2.BtagId = battleTag;
+                                result2.Username = namehold;
+                                await db.SaveChangesAsync();
+
+                                return 1;
+                            }
+                            if (goAPI == 0)
+                            {
+                                //update db because the status is "unsure"
+                                result2.BtagId = battleTag;
+                                result2.Username = namehold;
+                                await db.SaveChangesAsync();
+
+                                return 0;
+                            }
+                            if (goAPI == 3)
+                            {
+                                //return without updating
+                                return 3;
+                            }
+                            return 1;
                         }
                         else
                         {
-                            return false;
+                            return 0;
                         }
                     }
                 }
-                return false;
+                return 0;
             }
         }
         //---------------------------------------------------------------------------------------!rating <ARVO>                                 VALMIS V1
@@ -1465,7 +1507,7 @@ namespace K8Director
         }
         //API osuudet
         //---------------------------------------------------------------------------------------!OWAPI.net                                     VALMIS V1 Updated 06/2017 (Custom OWApi URL)
-        public async Task OWstats(string i, string st)
+        public async Task<int> OWstats(string i, string st)
     {
         string stnew = "";
         stnew = st.Replace("#", "-");
@@ -1477,11 +1519,17 @@ namespace K8Director
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Encoding", "gzip, deflate"); //This might be unnecessary, even wrong! Keep in mind.
                 client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");  
 
                 try
                 {
+                    HttpResponseMessage responseweb = await client.GetAsync(url);
+                    if (!(responseweb.IsSuccessStatusCode))
+                    {
+                        return 3;
+                    }
                     var responseText = await client.GetStringAsync(url);
+                    
                     //dynamic data = JsonConvert.DeserializeObject(responseText);
                     dynamic data = responseText;
                     JObject o = JObject.Parse(data);
@@ -1510,7 +1558,8 @@ namespace K8Director
 
 
                     int sr = 0;
-                    //06.08.2017 OWAPI Workaround
+
+
                     if (o.SelectToken("eu.stats.competitive.game_stats.games_played") != null)
                     {
                         gamesPlayed = (double)o.SelectToken("eu.stats.competitive.game_stats.games_played");
@@ -1582,20 +1631,24 @@ namespace K8Director
 
                             await db.SaveChangesAsync();
                             Console.WriteLine("OWAPI-UPDATE OK");
-                        }
+                            //return 1;
+                            }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     Console.WriteLine("OWAPI 404 EX");
+                        Console.WriteLine(ex);
+                    return 0;
                 }
-                     
+                        
             }
+                return 1;
         }
         catch (Exception)
         {
             Console.WriteLine("OWAPI-UPDATE -- EX");
-            //return null;
+            return 0;
         }
 
     }

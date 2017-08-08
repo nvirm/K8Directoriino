@@ -166,6 +166,8 @@ namespace K8Director
             public static string txt134 = "(+forcecaptain @NIMI#1234 KAUPUNKI), vaihtaa kaupungin kapteenin väkisin.";
             public static string txt135 = "(+addmatch KOODI KOTIKAUPUNKI VIERASKAUPUNKI), luo tietokantaan uuden ottelun koodilla.";
 
+            public static string txt136 = "Annetulla Btag Id:llä ei löydy pelaajatunnusta!";
+
 
             //Scoreboard
             public static string txt108 = "Mikäli tuloslistasta ei saa mitään selvää, on todennäköistä että käytät liian pientä näyttöä (esim. puhelin). Voit käydä katsomassa tuloslistan myös verkkosivuilta.";
@@ -354,6 +356,8 @@ namespace K8Director
 
                 ProgHelpers.txt134 = "(+forcecaptain @NAME#1234 TEAM), forcefully changes the captain of the team.";
                 ProgHelpers.txt135 = "(+addmatch CODE HOMETEAM VISITORTEAM), creates a new match to database.";
+
+                ProgHelpers.txt136 = "No player profile was found with the given Btag Id!";
 
                 ProgHelpers.txt130 = "Home team has an unresolved game pending. Use !score HOME VISITOR to give score for the pending game.";
             }
@@ -557,15 +561,19 @@ namespace K8Director
                         string z = message.Author.Username;
                         y = msgsp[1];
                         var result = await ksh.Btag(x, y, z);
-                        if (result == true)
+                        if (result == 1)
                         {
                             // Reply to the user who posted "!btag".
-                            await textChannel.CreateMessage($"<@{message.Author.Id}>"+ProgHelpers.txt11+" " + (msgsp[1]));
+                            await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt11 + " " + (msgsp[1]));
                         }
-                        else
+                        if (result == 3)
+                        {
+                            await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt136 + " " + (msgsp[1]));
+                        }
+                        if (result == 0)
                         {
                             // Reply to the user who posted "!btag".
-                            await textChannel.CreateMessage($"<@{message.Author.Id}> "+ProgHelpers.txt12);
+                            await textChannel.CreateMessage($"<@{message.Author.Id}> " + ProgHelpers.txt12);
                         }
 
                         Console.WriteLine($"!btag - " + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now);
