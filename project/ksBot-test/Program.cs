@@ -54,7 +54,7 @@ namespace K8Director
             public static string txt22 = "Joukkueen nimi:";
             public static string txt23 = "Kapteeni:";
             public static string txt24 = "Lisää komentoon joukkueen nimi.";
-            public static string txt25 = "Sarjataulukon löydät osoitteesta: https://envy.red/kaupunkisota/Scoreboards";
+            public static string txt25 = "Sarjataulukon löydät osoitteesta: https://envy.red/kaupunkisota";
             public static string txt26 = "Kehittäjä:";
             public static string txt27 = "Toiminnot:";
             public static string txt28 = "Katso !help";
@@ -441,7 +441,7 @@ namespace K8Director
             //}
 
             //-----------------------------------------------------------------------------------------ME - VALMIS V1
-            if (message.Content == "!me")
+            if (message.Content.ToLower() == "!me")
             {
                 // Grab the DM or guild text channel this message was posted in from cache.
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
@@ -479,7 +479,7 @@ namespace K8Director
                 }
             }
             //-----------------------------------------------------------------------------------------TEAMS - VALMIS V1
-            if (message.Content == "!teams")
+            if (message.Content.ToLower() == "!teams")
             {
                 // Grab the DM or guild text channel this message was posted in from cache.
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
@@ -505,7 +505,7 @@ namespace K8Director
                 }
             }
             //-----------------------------------------------------------------------------------------RATING - VALMIS V1
-            if (message.Content.StartsWith("!rating"))
+            if (message.Content.ToLower().StartsWith("!rating"))
             {
                 var msg = message.Content;
                 string[] msgsp = msg.Split(null);
@@ -546,7 +546,7 @@ namespace K8Director
 
             }
             //-----------------------------------------------------------------------------------------BTAG - VALMIS V1
-            if (message.Content.StartsWith("!btag"))
+            if (message.Content.ToLower().StartsWith("!btag"))
             {
                 var msg = message.Content;
                 string[] msgsp = msg.Split(null);
@@ -588,7 +588,7 @@ namespace K8Director
 
             }
             //-----------------------------------------------------------------------------------------ROSTER - VALMIS V1
-            if (message.Content.StartsWith("!roster"))
+            if (message.Content.ToLower().StartsWith("!roster"))
             {
                 var msg = message.Content;
                 string[] msgsp = msg.Split(null);
@@ -659,7 +659,7 @@ namespace K8Director
                 }
             }
             //-----------------------------------------------------------------------------------------STANDINGS - VALMIS V1
-            if (message.Content == "!standings" || message.Content == "!scoreboard")
+            if (message.Content.ToLower() == "!standings" || message.Content.ToLower() == "!scoreboard")
             {
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
 
@@ -681,7 +681,7 @@ namespace K8Director
                 catch (Exception) { Console.WriteLine("!scoreboard - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
             }
             //-----------------------------------------------------------------------------------------INFO - VALMIS V1
-            if (message.Content == "!info")
+            if (message.Content.ToLower() == "!info")
             {
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
 
@@ -705,7 +705,7 @@ namespace K8Director
                 catch (Exception) { Console.WriteLine($"!info - EX -" + message.Author.Username + "-" + message.Author.Id + " --- " + DateTime.Now); }
             }
             //-----------------------------------------------------------------------------------------HELP - VALMIS V1
-            if (message.Content == "!help")
+            if (message.Content.ToLower() == "!help")
             {
                 ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
 
@@ -757,7 +757,7 @@ namespace K8Director
             if (message.ChannelId.Id.ToString() == ProgHelpers.captainchannel)//
             {
                 //-----------------------------------------------------------------------------------------SHOWTIME - CHECK IF READY V1
-                if (message.Content.StartsWith("!showtime"))
+                if (message.Content.ToLower().StartsWith("!showtime"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -820,7 +820,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------TEAMNAME - VALMIS V1
-                if (message.Content.StartsWith("!teamname"))
+                if (message.Content.ToLower().StartsWith("!teamname"))
             {
                 var msg = message.Content;
                 string[] msgsp = msg.Split(null);
@@ -858,7 +858,7 @@ namespace K8Director
 
             }
                 //-----------------------------------------------------------------------------------------BECOMECAPTAIN - VALMIS V1
-                if (message.Content.StartsWith("!captain"))
+                if (message.Content.ToLower().StartsWith("!captain"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -909,7 +909,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------RESIGNCAPTAIN - VALMIS V1
-                if (message.Content == "!resign")
+                if (message.Content.ToLower() == "!resign")
                 {
                     ITextChannel textChannel = (ITextChannel)shard.Cache.Channels.Get(message.ChannelId);
 
@@ -944,7 +944,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------ADDMEMBER - VALMIS V1
-                if (message.Content.StartsWith("!add"))
+                if (message.Content.ToLower().StartsWith("!add"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -1011,7 +1011,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------REMOVEMEMBER - VALMIS V1
-                if (message.Content.StartsWith("!remove"))
+                if (message.Content.ToLower().StartsWith("!remove"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -1079,7 +1079,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------START - VALMIS V1
-                if (message.Content.StartsWith("!start"))
+                if (message.Content.ToLower().StartsWith("!start"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -1174,7 +1174,7 @@ namespace K8Director
 
                 }
                 //-----------------------------------------------------------------------------------------SCORE - VALMIS V1
-                if (message.Content.StartsWith("!score"))
+                if (message.Content.ToLower().StartsWith("!score"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -1249,7 +1249,7 @@ namespace K8Director
             if (message.ChannelId.Id.ToString() == ProgHelpers.adminchannel)
             {
                 //-----------------------------------------------------------------------------------------+ADDMATCH - VALMIS V1
-                if (message.Content.StartsWith("+addmatch"))
+                if (message.Content.ToLower().StartsWith("+addmatch"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);
@@ -1294,7 +1294,7 @@ namespace K8Director
                     }
                 }
                 //-----------------------------------------------------------------------------------------+FORCECAPTAIN
-                if (message.Content.StartsWith("+forcecaptain"))
+                if (message.Content.ToLower().StartsWith("+forcecaptain"))
                 {
                     var msg = message.Content;
                     string[] msgsp = msg.Split(null);

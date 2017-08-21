@@ -30,6 +30,9 @@ C:\Users\Niki\Desktop\K8Director\project\ksBot-test\bin\Debug\netcoreapp1.1\K8Di
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\bin\Debug\netcoreapp1.1\K8Director.runtimeconfig.dev.json
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\bin\Debug\netcoreapp1.1\K8Director.dll
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\bin\Debug\netcoreapp1.1\K8Director.pdb
+C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.csprojResolveAssemblyReference.cache
+C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.csproj.CoreCompileInputs.cache
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.AssemblyInfo.cs
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.dll
 C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.pdb
+C:\Users\Niki\Desktop\K8Director\project\ksBot-test\obj\Debug\netcoreapp1.1\K8Director.AssemblyInfoInputs.cache

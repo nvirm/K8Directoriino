@@ -13,5 +13,8 @@ namespace K8Director.Models
         public int? RndWon { get; set; }
         public int? RndLose { get; set; }
         public int? Division { get; set; }
+        public int? RndWins { get; set; }
+        public int? RndDraws { get; set; }
+        public int? RndLoses { get; set; }
     }
 }

@@ -890,15 +890,15 @@ namespace K8Director
                                                 }
                                                 if (mr1 > mr2)
                                                 {
-                                                    pointst1 = ProgHelpers.winpoints;
+                                                    pointst1 = ProgHelpers.winpoints; //voitto
                                                 }
                                                 if (mr1 < mr2)
                                                 {
-                                                    pointst1 = ProgHelpers.losepoints;
+                                                    pointst1 = ProgHelpers.losepoints; //tappio
                                                 }
                                                 if (mr1 == mr2)
                                                 {
-                                                    pointst1 = ProgHelpers.drawpoints;
+                                                    pointst1 = ProgHelpers.drawpoints; //tasapeli
                                                 }
                                                 await Editscoreboardrow((int)matchlist.Team1Id, pointst1, mr1, mr2,divisiont1);
                                             }
@@ -1868,6 +1868,19 @@ namespace K8Director
                     newrow.GamesPlayed = 1;
                     newrow.Division = division;
 
+                    if (stdpoints == ProgHelpers.winpoints) //3
+                    {
+                        newrow.RndWins = 1;
+                    }
+                    if (stdpoints == ProgHelpers.drawpoints) //1
+                    {
+                        newrow.RndDraws = 1;
+                    }
+                    if (stdpoints == ProgHelpers.losepoints) //0
+                    {
+                        newrow.RndLoses = 1;
+                    }
+
                     dbn1.Entry(newrow).State = Microsoft.EntityFrameworkCore.EntityState.Added;
                     await dbn1.SaveChangesAsync();
 
@@ -1900,11 +1913,28 @@ namespace K8Director
                         var rndwonedit = editrow.RndWon;
                         var rndloseedit = editrow.RndLose;
 
+                        var rndwinrounds = editrow.RndWins;
+                        var rnddrawrounds = editrow.RndDraws;
+                        var rndloserounds = editrow.RndLoses;
+
                         editrow.StdPoints = stdpointsedit + stdpoints;
                         editrow.RndWon = rndwonedit + rndwon;
                         editrow.RndLose = rndloseedit + rndlose;
                         editrow.GamesPlayed = editrow.GamesPlayed + 1;
                         editrow.Division = division;
+
+                        if (stdpoints == ProgHelpers.winpoints) //3
+                        {
+                            editrow.RndWins = rndwinrounds + 1;
+                        }
+                        if (stdpoints == ProgHelpers.drawpoints) //1
+                        {
+                            editrow.RndDraws = rnddrawrounds + 1;
+                        }
+                        if (stdpoints == ProgHelpers.losepoints) //0
+                        {
+                            editrow.RndDraws = rndloserounds + 1;
+                        }
 
                         dbn2.Entry(editrow).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                         await dbn2.SaveChangesAsync();

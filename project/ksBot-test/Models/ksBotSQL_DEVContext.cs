@@ -36,12 +36,9 @@ namespace K8Director.Models
 
                 entity.Property(e => e.Added)
                     .HasColumnName("added")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("getdate()");
+                    .HasColumnType("datetime");
 
-                entity.Property(e => e.Closed)
-                    .HasColumnName("closed")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.Closed).HasColumnName("closed");
 
                 entity.Property(e => e.ManageDraftUrl)
                     .HasColumnName("ManageDraftURL")
@@ -63,9 +60,7 @@ namespace K8Director.Models
                     .HasColumnName("projectedstarttime")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Started)
-                    .HasColumnName("started")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.Started).HasColumnName("started");
 
                 entity.Property(e => e.Team1Division).HasColumnName("Team1_division");
 
@@ -95,29 +90,17 @@ namespace K8Director.Models
                 entity.HasIndex(e => e.TeamId2CaptainUserId)
                     .HasName("TeamId2CaptainUserId");
 
-                entity.Property(e => e.TeamId)
-                    .HasColumnName("Team_id")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.TeamId).HasColumnName("Team_id");
 
-                entity.Property(e => e.MatchId)
-                    .HasColumnName("Match_id")
-                    .HasDefaultValueSql("0");
-
-                entity.Property(e => e.TeamId1CaptainUserId).HasDefaultValueSql("0");
+                entity.Property(e => e.MatchId).HasColumnName("Match_id");
 
                 entity.Property(e => e.TeamId1DraftUrl)
                     .HasColumnName("TeamId1DraftURL")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.TeamId1Points).HasDefaultValueSql("0");
-
-                entity.Property(e => e.TeamId2CaptainUserId).HasDefaultValueSql("0");
-
                 entity.Property(e => e.TeamId2DraftUrl)
                     .HasColumnName("TeamId2DraftURL")
                     .HasMaxLength(255);
-
-                entity.Property(e => e.TeamId2Points).HasDefaultValueSql("0");
 
                 entity.HasOne(d => d.Match)
                     .WithMany(p => p.MatchTeams)
@@ -174,6 +157,12 @@ namespace K8Director.Models
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CityName).HasMaxLength(255);
+
+                entity.Property(e => e.RndDraws).HasColumnName("rndDraws");
+
+                entity.Property(e => e.RndLoses).HasColumnName("rndLoses");
+
+                entity.Property(e => e.RndWins).HasColumnName("rndWins");
 
                 entity.Property(e => e.TeamId).HasColumnName("Team_id");
             });
@@ -233,24 +222,17 @@ namespace K8Director.Models
 
                 entity.Property(e => e.Added)
                     .HasColumnName("added")
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("getdate()");
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.ApiavatarUrl)
                     .HasColumnName("APIAvatarURL")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.ApicurrentSr)
-                    .HasColumnName("APICurrentSR")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.ApicurrentSr).HasColumnName("APICurrentSR");
 
-                entity.Property(e => e.ApideathAvg)
-                    .HasColumnName("APIDeathAvg")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.ApideathAvg).HasColumnName("APIDeathAvg");
 
-                entity.Property(e => e.ApihealAvg)
-                    .HasColumnName("APIHealAvg")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.ApihealAvg).HasColumnName("APIHealAvg");
 
                 entity.Property(e => e.Apihero1)
                     .HasColumnName("APIHero1")
@@ -264,9 +246,7 @@ namespace K8Director.Models
                     .HasColumnName("APIHero3")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.ApikillAvg)
-                    .HasColumnName("APIKillAvg")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.ApikillAvg).HasColumnName("APIKillAvg");
 
                 entity.Property(e => e.ApitimePlayed).HasColumnName("APITimePlayed");
 
@@ -276,9 +256,7 @@ namespace K8Director.Models
 
                 entity.Property(e => e.BtagId).HasMaxLength(255);
 
-                entity.Property(e => e.CurrentSr)
-                    .HasColumnName("CurrentSR")
-                    .HasDefaultValueSql("0");
+                entity.Property(e => e.CurrentSr).HasColumnName("CurrentSR");
 
                 entity.Property(e => e.DiscordId)
                     .IsRequired()
