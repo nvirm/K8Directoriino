@@ -1,7 +1,7 @@
 # K8Directoriino
 ![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino1.PNG)
 
-# !! Please note: Developement version, some functions do not work.!!
+# !! Please note: Development version, some functions do not work.!!
 - You're free to use this as a foundation for your project, but keep in mind that it is not complete.
 
 An Overwatch custom tournament/league bot for Discord
