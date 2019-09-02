@@ -1,3 +1,5 @@
+# STATUS: Not maintained
+
 # K8Directoriino
 ![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino1.PNG)
 
