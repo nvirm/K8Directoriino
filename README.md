@@ -2,6 +2,9 @@
 
 # K8Directoriino
 ![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino1.PNG)
+![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino2.PNG)
+![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino3.PNG)
+![alt text](https://github.com/kitsun8/K8Directoriino/blob/master/screenshots/directoriino4.PNG)
 
 # !! Please note: Development version, some functions do not work.!!
 - You're free to use this as a foundation for your project, but keep in mind that it is not complete.
